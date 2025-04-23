@@ -6,11 +6,11 @@ createmigration:
 
 # This command will apply all up migrations to the database.
 migrateup:
-	migrate -path=internal/infra/database/migrations -database "mysql://root:root@tcp(localhost:3306)/orders" -verbose up
+	migrate -path=internal/infra/database/migrations -database "mysql://root:root@tcp(mysql:3306)/orders" -verbose up
 
 # This command will apply all down migrations to the database.
 migratedown:
-	migrate -path=internal/infra/database/migrations -database "mysql://root:root@tcp(localhost:3306)/orders" -verbose down
+	migrate -path=internal/infra/database/migrations -database "mysql://root:root@tcp(mysql:3306)/orders" -verbose down
 
 # PHONY is used to declare that the target is not a file.
 .PHONY: migrateup migratedown createmigration
